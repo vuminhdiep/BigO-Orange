@@ -1,0 +1,24 @@
+#Lay gia tri bit tai vi tri k cua X (get bit): (X >> k) & 1
+
+#Gan gia tri bit tai vi tri k cua X:
+#Gan 0 (clear bit): X & (~(1 << k))
+#Gan 1 (set bit): X | (1 << k)
+
+#Dao gia tri bit tai vi tri k cuar X (flip bit)
+# X ^ (1 << k)
+
+#Phep toan AND: &
+# A & B = 1 iff A = B = 1.
+# Else A & B = 0
+
+#Phep toan OR: |
+# A | B = 0 iff A = B = 0
+# Else A | B = 1
+
+#Phep toan XOR: ^
+# if A = B then A ^ B = 0
+# Else A ^ B = 1
+
+#Phep toan NOT: ~
+# if A = 0 then ~A = 1
+#if A = 1 then ~A = 0
