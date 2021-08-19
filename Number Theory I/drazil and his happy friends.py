@@ -14,40 +14,43 @@
 # else:
 #     print("NO")
 
+def main(total_m, total_fm, h_m, h_fm):
+    res_m = [False] * total_m
+    res_fm = [False] * total_fm
+    if h_m[0] > 0:
+        for i in range(1, len(h_m)):
+            res_m[h_m[i]] = True
 
-total_m, total_fm = map(int, input().split())
-h_m = list(map(int, input().split()))
-h_fm = list(map(int, input().split()))
+    if h_fm[0] > 0:
+        for j in range(1, len(h_fm)):
+            res_fm[h_fm[j]] = True
 
-res_m = [False] * total_m
-res_fm = [False] * total_fm
-if h_m[0] > 0:
-    for i in range(1, len(h_m)):
-        res_m[h_m[i]] = True
+    i_max = 10000
+    for i in range(i_max):
+        invite_m = i % total_m
+        invite_fm = i % total_fm
 
-if h_fm[0] > 0:
-    for j in range(1, len(h_fm)):
-        res_fm[h_fm[j]] = True
+        if res_m[invite_m]:
+            res_fm[invite_fm] = True
 
-i_max = 10000
-for i in range(i_max):
-    invite_m = i % total_m
-    invite_fm = i % total_fm
+        if res_fm[invite_fm]:
+            res_m[invite_m] = True
 
-    if res_m[invite_m]:
-        res_fm[invite_fm] = True
+    for male in res_m:
+        if male is False:
+            print("No")
+            exit(0)
 
-    if res_fm[invite_fm]:
-        res_m[invite_m] = True
+    for fm in res_fm:
+        if fm is False:
+            print("No")
+            exit(0)
+    print("Yes")
 
-for male in res_m:
-    if male is False:
-        print("No")
-        exit(0)
 
-for fm in res_fm:
-    if fm is False:
-        print("No")
-        exit(0)
+if __name__ == '__main__':
+    total_m, total_fm = map(int, input().split())
+    h_m = list(map(int, input().split()))
+    h_fm = list(map(int, input().split()))
 
-print("Yes")
+    main(total_m, total_fm, h_m, h_fm)
