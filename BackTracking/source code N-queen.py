@@ -1,4 +1,4 @@
-N = 4
+N = 8
 board = [[0] * N for i in range(N)]
 
 
