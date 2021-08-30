@@ -18,5 +18,5 @@ def phi_upgrade(n):
 
 
 if __name__ == "__main__":
-    n = 60
+    n = 80798284478113
     print('phi(', n, ') =', phi_upgrade(n), sep= '')
