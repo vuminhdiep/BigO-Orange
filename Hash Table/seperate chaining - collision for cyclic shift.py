@@ -82,6 +82,7 @@ def printHashTable():
             print(i, '.', j, ' ', myNode.key, sep= '')
             myNode = myNode.next
 
+
 if __name__ == '__main__':
     keys = ["John", "Usha", "Summer", "Bella", "Donna", "Alice"]
     hashTable = [HashTable() for i in range(TABLE_SIZE)]
